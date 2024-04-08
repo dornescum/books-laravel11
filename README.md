@@ -69,8 +69,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 php artisan make:controller UserController
 # books-laravel11
 
-composer istall
+composer install
 
     composer update
 
-composer update --ignore-platform-reqs
+composer update --ignore-platform-reqs // this worked
