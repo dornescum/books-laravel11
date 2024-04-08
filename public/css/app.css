@@ -1,0 +1,275 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: #f1f1f1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.icon {
+    color: gold;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+#books .book-card {
+    /*background: red;*/
+    font-weight: bolder;
+    /*height: 18rem;*/
+    width: 18rem;
+
+}
+
+#books .book-card img {
+    height: 100%;
+    width: 100%;
+    min-width: 190px;
+    max-width: 290px;
+    min-height: 220px;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+#books .card-center {
+    height: 5rem;
+}
+
+#books .book-card .book-author {
+    /*background: green;*/
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+#show {
+    /*background: red;*/
+    height: 100vh;
+    min-height: 100%;
+}
+
+#show img {
+    height: 100%;
+    width: 100%;
+    min-height: 420px;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+#show h1 {
+    padding: 20px 0 10px 30px;
+}
+
+#show .book-info {
+    padding: 20px 0 10px 30px;
+}
+
+#show .book-footer {
+    background: #562626;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#show .book-footer a {
+    height: 40px;
+}
+
+#show-related img {
+    min-height: 120px;
+    max-height: 120px;
+    object-fit: cover;
+}
+
+#show-related ul {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding: 0;
+    list-style: none;
+}
+
+#edit-book {
+    background: #d7d4d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*min-height: 100%;*/
+}
+
+#create-book {
+    background: #c0bfbf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*min-height: 100%;*/
+}
+
+/*categories*/
+#categories {
+    padding: 0;
+    cursor: pointer;
+    background: #f9f9f9;
+}
+
+#categories .categories-title {
+    padding: 1rem 0 1rem 1rem;
+    background: #ccc !important;
+}
+
+#categories ul {
+    padding: 0;
+    /*background: #1f2937;*/
+}
+
+
+
+#categories ul li {
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+}
+#categories ul li:first-child {
+    margin: 0 !important;
+    /*background: red;*/
+}
+
+#categories ul li:hover {
+    background: #ccc;
+    overflow: hidden;
+}
+#categories ul li:hover * {
+    background: #ccc;
+    color: white;
+}
+
+
+#categories ul li a {
+    padding: 1rem 0 !important;
+    margin: 1rem 0 !important;
+    color: black;
+    text-transform: capitalize;
+    text-underline: none !important;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#categories ul li a:hover {}
+
+
+/*authors*/
+#authors {
+    background: #f9f9f9;
+    padding: 0;
+    cursor: pointer;
+}
+
+#authors .authors-title {
+    padding: 1rem 0 1rem 1rem;
+    background: #ccc !important;
+}
+
+#authors ul {
+    padding: 0;
+    /*background: #1f2937;*/
+}
+
+#authors ul li:first-child {
+    margin: 0 !important;
+    /*background: red;*/
+}
+
+#authors ul li {
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+}
+#authors ul li:first-child {
+    margin: 0 !important;
+    /*background: red;*/
+}
+
+#authors ul li:hover {
+    background: #ccc;
+    overflow: hidden;
+    color: red !important;
+}
+#authors ul li:hover,
+#authors ul li:hover * { /* The * represents all child elements of li */
+    background: #ccc;
+    color: white; /* Replace this with your desired color. */
+}
+
+#authors ul li a {
+    padding: 1rem 0 !important;
+    margin: 1rem 0 !important;
+    color: black;
+    text-transform: capitalize;
+    text-underline: none !important;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#authors ul li a:hover {
+    /*color: white;*/
+}
+
+/*searchBooks*/
+#searchBooks {
+    /*background: red;*/
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchBooks input {
+    height: 38px;
+}
+ #searchBooks .btn-search {
+     background: #ccc;
+ }
+ #searchBooks .btn-search i {
+    color: white;
+ }
+
+ #searchBooks .btn-reset {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: #ccc;
+     margin: 0 0 0 5px;
+ }
+
+
+ /*my books */
+#myBooks .card a {
+    color: #343a40;
+    /*text-transform: capitalize;*/
+}
+
+/*navbar*/
+#navbarNav {
+    /*background: red;*/
+}
+
+#navbarNav .mobile-nav {
+   display: none;
+}

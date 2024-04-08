@@ -1,11 +1,14 @@
 <!-- resources/views/books.blade.php -->
 
-@extends('layouts.app')
+@extends('layouts.bootstrap')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    // <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
-</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 {{--@section('styles')--}}
 {{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
@@ -18,66 +21,57 @@
     }
 </style>
 @section('content')
+{{--    <div class="d-flex justify-content-end">--}}
+{{--        <a href="/books">Books</a>--}}
+{{--    </div>--}}
 
-    <h1>Books</h1>
-    <form action="{{ route('books.search') }}" method="get">
+    <h1 class="p-1">All Books</h1>
+    <div class="d-flex justify-content-end">
+        <form action="{{ route('books.search') }}" method="get" id="searchBooks">
+            <div class="d-flex">
+                <label for="search" style="padding-right: 1rem">
+                    <input type="text" id="search" name="keyword" placeholder="search" >
+                </label>
 
-        {{--        <input type="reset" value="Reset">--}}
-        {{--        <a href="/books" class="btn btn-secondary">Reset</a>--}}
-        <div class="d-flex">
-            <label for="search" style="padding-right: 1rem">
-                <input type="text" id="search" name="keyword" placeholder="search" style="height: 34px">
-            </label>
-               <span style="position: relative">
-            <input type="submit" name="submit" value="" style="padding: 0 1rem; border-radius: 5px">
-            <i class="fa fa-search" style="position: absolute; right: 8px; top: 7px; color: black;"></i>
-        </span>
-            <span style="position: relative">
-            <input type="reset" name="submit" value="" style="padding: 0 1rem; border-radius: 5px">
-            <i class="fa fa-close" style="position: absolute; right: 10px; top: 7px; color: black;"></i>
-        </span>
-        </div>
+                <button type="submit" class="btn btn-search">
+{{--                    search--}}
+                    <i class="fa fa-search" aria-hidden="true"></i>
 
-        <div class="d-flex">
-{{--                    <span style="position: relative">--}}
-{{--            <input type="reset" name="submit" value="">--}}
-{{--            <i class="fa fa-close" style="position: absolute; right: 10px; top: 5px; color: black;"></i>--}}
-{{--        </span>--}}
-        </div>
+                </button>
 
+{{--                <button type="reset" class="btn btn-reset ml-4 pl-4">--}}
+{{--                    <i class="fa fa-times" aria-hidden="true"></i>--}}
+{{--                </button>--}}
+                <a href="/books" type="reset"  class="btn btn-reset ml-4 pl-4">
+                    <i class="fa fa-times" aria-hidden="true"></i>
 
-    </form>
+                </a>
+            </div>
+            <div class="d-flex">
+            </div>
+        </form>
+    </div>
+
 
     @if(count($books) > 0)
-        <div class="container">
+        <div class="">
             <div class="row">
                 @foreach($books as $book)
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" id="books">
-                        {{--                        style="width: 18rem;"--}}
                         <a href="books/{{$book['id']}}">
-
-
                             <div class="card my-1 book-card">
-                                {{--                            height="290px" width="190px"--}}
-                                {{--                            style="object-fit: cover"--}}
                                 <img src="{{$book->link}}" class="card-img-top" alt="{{$book->title}}">
-                                <div class="card-body">
-                                    <h5 class="card-title capitalize">{{ $book->title }}</h5>
-                                    {{--                                <p class="card-text">{{ $book->description }}</p>--}}
+                                <div class="card-body card-center">
+                                    <h5 class="card-title capitalize">{{ $book->title }} --UID: {{$book->user_id}}</h5>
                                 </div>
                                 <ul class=" d-flex justify-content-between book-author">
-                                    {{--                                <li class="list-group-item">Year: {{ $book->year }}</li>--}}
                                     <li class="list-group-item"> {{ $book->author }}</li>
-                                    {{--                                <li class="list-group-item"> {{ $book->rating }}</li>--}}
                                     <li class="list-group-item">
                                         @for($i = 0; $i < $book->rating; $i++)
                                             <span>&#9733;</span>
                                         @endfor
                                     </li>
                                 </ul>
-                                {{--                            <div class="card-body">--}}
-                                {{--                                <a href="books/{{$book['id']}}" class="card-link">Book Details</a>--}}
-                                {{--                            </div>--}}
                             </div>
                         </a>
                     </div>
@@ -87,13 +81,55 @@
     @else
         <p>No books found</p>
     @endif
+
+    <nav aria-label="Page navigation example" class="my-4 py-4">
+        <ul class="pagination " style="margin: 0 0 120px 0">
+            <!-- Previous Page Link -->
+            @if ($books->onFirstPage())
+                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+            @else
+                <li class="page-item"><a class="page-link" href="{{ $books->previousPageUrl() }}">Previous</a></li>
+            @endif
+
+            <!-- Page Number Links -->
+            @for ($i = 1; $i <= $books->lastPage(); $i++)
+                <li class="page-item {{ ($books->currentPage() == $i) ? ' active' : '' }}">
+                    <a class="page-link" href="{{ $books->url($i) }}">{{ $i }}</a>
+                </li>
+            @endfor
+
+            <!-- Next Page Link -->
+            @if ($books->hasMorePages())
+                <li class="page-item"><a class="page-link" href="{{ $books->nextPageUrl() }}">Next</a></li>
+            @else
+                <li class="page-item disabled"><span class="page-link">Next</span></li>
+            @endif
+        </ul>
+    </nav>
+
 @endsection
 
 
+
+{{--<ul class="list-group my-5">--}}
+{{--    @foreach ($books as $book)--}}
+{{--        <li class="list-group-item">{{ $book->title }} - {{ $book->category->name }}</li>--}}
+{{--    @endforeach--}}
+{{--</ul>--}}
+
+{{--<div class="d-flex justify-content-center">--}}
+{{--    {{ $books->links() }}--}}
+{{--</div>--}}
+
+
+
+
+
 <script>
-    console.log('inside')
     $(document).ready(function () {
         let title = $(".card-title");
+        console.log('title ', title)
+        console.log('search value ', $("search"))
         title.text(function (_, txt) {
             return txt.charAt(0).toUpperCase() + txt.slice(1);
         });
