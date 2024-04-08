@@ -1,3 +1,6 @@
+### php artisan serve --host=0.0.0.0 --port=8000
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -74,3 +77,20 @@ composer install
     composer update
 
 composer update --ignore-platform-reqs // this worked
+
+
+after install php 8.2
+sudo apt-get install php-mysql
+sudo service apache2 restart
+
+
+# ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'rootSuper$1234';
+FLUSH PRIVILEGES;
+
+# root = rootSuper$1234
+
+# CREATE USER 'laravel-books'@'localhost' IDENTIFIED BY 'Laravel-books1234$';
+GRANT ALL PRIVILEGES ON laravel-books.* TO 'laravel-books'@'localhost';
+FLUSH PRIVILEGES;
+
+### laravel-books = Laravel-books1234$
