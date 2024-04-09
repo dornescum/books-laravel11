@@ -19,13 +19,13 @@ The primary intent of this exercise was to test and showcase proficiency in Lara
 - **Filter by Author:** View books grouped by their authors.
 - **Search Books:** You can search for books by title, author, or description.
 
-## Technical Details
+### Technical Details
 This project uses the following technology stack:
 - Laravel Framework (v11.2.0)
 - PHP (v8.2)
 - MySQL
 
-## Installation and Set-Up
+### Installation and Set-Up
 To get this project running on your local machine, follow the steps below:
 
 1. Clone this repository using `git clone` followed by the repository URL.
@@ -36,10 +36,10 @@ To get this project running on your local machine, follow the steps below:
 
 > npm install
 > 
-# Copy .env.example to .env and configure your database settings.
+### Copy .env.example to .env and configure your database settings.
 >  php artisan migrate 
 
-# Start the server.
+### Start the server.
 >     php artisan serve
 
 > You will now be able to access the application at localhost:8000.
