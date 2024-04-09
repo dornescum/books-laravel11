@@ -53,13 +53,6 @@ This project uses Bootstrap for front-end styling instead of Tailwind CSS.
 For contributing to this project, please fork the repository and submit a pull request with your changes.
 
 
-![blogs list](/resources/img/1.png)
-![blogs list](/resources/img/2.png)
-![blogs list](/resources/img/3.png)
-![blogs list](/resources/img/4.png)
-![blogs list](/resources/img/create.png)
-![blogs list](/resources/img/edit.png)
-![blogs list](/resources/img/nav.png)
-![blogs list](/resources/img/notFound.png)
-![blogs list](/resources/img/search.png)
-![blogs list](/resources/img/show.png)
+![blogs list](/resources/img/crudBooks.jpg)
+
+
