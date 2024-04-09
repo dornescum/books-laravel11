@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-//    return view('welcome');
-//    return view('custom');
     return redirect('/books');
 });
 
@@ -43,7 +41,6 @@ Route::get('/books', [BooksController::class, 'index'])->name('books.index');
 Route::get('/books/create', [BooksController::class, 'create'])->name('books.create')->middleware('auth'); // moved up
 Route::post('/books', [BooksController::class, 'store']); // moved up
 
-//Route::get('/users/{user}/books', 'UserController@getUserBooks');
 Route::get('/users/{user}/books', [UserController::class, 'getUserBooks']);
 Route::get('/mybooks', [UserController::class, 'showUserBooks'])->name('mybooks')->middleware('auth');
 Route::get('/books/filterByCategory', 'App\Http\Controllers\BooksController@filterByCategory');

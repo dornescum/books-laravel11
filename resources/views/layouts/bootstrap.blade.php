@@ -53,7 +53,6 @@
              role="alert">
             <strong class="font-bold">Success!</strong>
             <div>{{ session('success') }}</div>
-            {{--<p>test</p>--}}
             <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      @click="flash = false"
