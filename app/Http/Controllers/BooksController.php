@@ -36,14 +36,6 @@ class BooksController extends Controller
         return response()->json($user->books);
     }
 
-//    public function index()
-//    {
-////        $books = Book::all();
-////        $books = Book::with('category')->get();
-//        $books = Book::with('category')->paginate(10);
-////die($books);
-//        return view('books.index', ['books' => $books]);
-//    }
 
     /**
      * Retrieve books based on category
@@ -93,17 +85,13 @@ class BooksController extends Controller
     public function update(Request $request, Book $book)
     {
         $this->authorize('update', $book);
-//        $book = Book::find($book); //comentata nu stiu dc
-        // Validate submitted form data
         $request->validate(['title' => 'required', 'author' => 'required', 'description' => 'required',]);
 
-        // Update book
         $book->title = $request->title;
         $book->author = $request->author;
         $book->description = $request->description;
         $book->save();
 
-        // Redirect to the book index page
         return redirect('/books');
     }
 
@@ -163,14 +151,6 @@ class BooksController extends Controller
         return redirect('/books')->with('success', 'Book has been added.');
     }
 
-//    public function search()
-//    {
-//        $keyword = request('keyword');
-//        $books = Book::where('title', 'like', "%$keyword%")->orWhere('author', 'like', "%$keyword%")
-//            ->orWhere('description', 'like', "%$keyword%")->get();
-//
-//        return view('books.index', ['books' => $books]);
-//    }
 
     public function search()
     {

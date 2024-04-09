@@ -15,12 +15,7 @@
                 <label for="title"  class="form-label">Title:</label>
                 <input type="text" id="title" name="title" required placeholder="title" class="form-control">
             </div>
-
             <br>
-{{--            <div class="d-flex flex-column">--}}
-{{--                <label  class="form-label" for="description">Description:</label>--}}
-{{--                <input  class="form-control" type="text" name="description" required id="description">--}}
-{{--            </div>--}}
             <div class="d-flex flex-column">
                 <label class="form-label" for="description">Description:</label>
                 <textarea class="form-control" name="description" id="description" required></textarea>
@@ -58,7 +53,6 @@
                 <label  class="form-label" for="image">Image:</label>
                 <input  class="form-control" type="text" name="link" required id="image" placeholder="https://link.com">
             </div>
-
 
             <div class="my-4">
                 <button type="submit" class="btn btn-primary"> Add Book</button>

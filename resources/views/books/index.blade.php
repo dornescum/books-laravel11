@@ -1,4 +1,3 @@
-<!-- resources/views/books.blade.php -->
 
 @extends('layouts.bootstrap')
 
@@ -10,9 +9,6 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-{{--@section('styles')--}}
-{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
-{{--@endsection--}}
 <style>
     span {
         color: gold;
@@ -21,11 +17,8 @@
     }
 </style>
 @section('content')
-{{--    <div class="d-flex justify-content-end">--}}
-{{--        <a href="/books">Books</a>--}}
-{{--    </div>--}}
 
-    <h1 class="p-1">All Books</h1>
+    <a href="/books" class="p-1 title text-secondary h2">All Books</a>
     <div class="d-flex justify-content-end">
         <form action="{{ route('books.search') }}" method="get" id="searchBooks">
             <div class="d-flex">
@@ -34,14 +27,9 @@
                 </label>
 
                 <button type="submit" class="btn btn-search">
-{{--                    search--}}
                     <i class="fa fa-search" aria-hidden="true"></i>
-
                 </button>
 
-{{--                <button type="reset" class="btn btn-reset ml-4 pl-4">--}}
-{{--                    <i class="fa fa-times" aria-hidden="true"></i>--}}
-{{--                </button>--}}
                 <a href="/books" type="reset"  class="btn btn-reset ml-4 pl-4">
                     <i class="fa fa-times" aria-hidden="true"></i>
 
@@ -51,7 +39,6 @@
             </div>
         </form>
     </div>
-
 
     @if(count($books) > 0)
         <div class="">
@@ -109,22 +96,6 @@
 
 @endsection
 
-
-
-{{--<ul class="list-group my-5">--}}
-{{--    @foreach ($books as $book)--}}
-{{--        <li class="list-group-item">{{ $book->title }} - {{ $book->category->name }}</li>--}}
-{{--    @endforeach--}}
-{{--</ul>--}}
-
-{{--<div class="d-flex justify-content-center">--}}
-{{--    {{ $books->links() }}--}}
-{{--</div>--}}
-
-
-
-
-
 <script>
     $(document).ready(function () {
         let title = $(".card-title");
@@ -136,22 +107,4 @@
     });
 </script>
 
-{{--            <ul>--}}
-{{--            @foreach($books as $book)--}}
-{{--                <li class="my-2">--}}
-{{--                    <a href="books/<?= $book['id'] ?>">--}}
-{{--                        <ul>--}}
-{{--                            <li>  {{ $book->title }}</li>--}}
-{{--                            <li> {{ $book->description }}</li>--}}
-{{--                            <li> Year : {{ $book-> year }}</li>--}}
-{{--                            <li>Rating: {{ $book-> rating }}</li>--}}
-{{--                            <li>Author : {{ $book-> author }}</li>--}}
-{{--                            <li>--}}
-{{--                                <img src="{{$book-> link}}" alt="{{$book->title}}" height="90px" width="190px">--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endforeach--}}
-{{--            </ul>--}}
 

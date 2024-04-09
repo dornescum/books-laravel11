@@ -5,7 +5,10 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/books">Logo </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class=" mobile-only text-secondary" style="text-transform: capitalize"> {{ Auth::user()->name ?? null }}</div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -16,21 +19,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/books/create">Add</a>
                 </li>
-
-
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Pricing</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>--}}
-{{--                </li>--}}
             </ul>
 
 
 
             @if (Auth::check())
                 <ul class="navbar-nav">
-                    <!-- Authentication -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
@@ -46,7 +40,7 @@
                         <a class="nav-link" href="{{ route('mybooks') }}">My books</a>
                     </li>
                     <li>
-                        <div class="nav-link px-2 bg-primary"> {{ Auth::user()->name }}</div>
+                        <div class="nav-link px-2" style="text-transform: capitalize">UserName :  {{ Auth::user()->name }}</div>
                     </li>
                     <li class="nav-link mobile-nav">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,7 +51,6 @@
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Authors</a></li>
                             <li><hr class="dropdown-divider"></li>
-{{--                            <li><a class="dropdown-item" href="#">Something else here</a></li>--}}
                         </ul>
                     </li>
                 </ul>

@@ -8,18 +8,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-
-
-
-{{--<style>--}}
-{{--    .category {--}}
-{{--        padding: 1rem;--}}
-{{--    }--}}
-{{--</style>--}}
-{{--<pre>--}}
-{{--    @dd($booksGroupedByCategory)--}}
-{{--</pre>--}}
 @foreach ($booksGroupedByCategory as $category => $booksInCategory)
     <li >
     <a class="category my-4" href="{{ route('books.category', ['category' => $category]) }}">
@@ -34,7 +22,6 @@
 <script>
     $(document).ready(function () {
         let category = $(".category");
-
         category.text(function (_, txt) {
             return txt.charAt(0).toUpperCase() + txt.slice(1);
         });

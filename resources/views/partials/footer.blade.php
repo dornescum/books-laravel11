@@ -8,9 +8,11 @@
         color: white;
         text-align: center;
         padding: 10px;
+        z-index: 10;
+        margin-bottom: 0;
     }
 </style>
 
-<footer class="footer">
-    <p>books footer</p>
+<footer >
+    <p class="footer" >books footer</p>
 </footer>

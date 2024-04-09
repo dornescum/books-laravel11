@@ -1,14 +1,12 @@
 @media (max-width: 1366px) {
     .book-card {
         width: 15rem !important;
-        background: greenyellow;
     }
 }
 
 
 @media (max-width: 1024px) {
     .book-card {
-        /*width: 18rem;*/
         background: blue;
     }
 
@@ -22,15 +20,32 @@
 }
 
 @media (max-width: 991px) {
-    body {
-        background: red;
-    }
+
     #navbarNav {
-        background: red !important;
     }
 
     #navbarNav .mobile-nav {
         display: block;
+    }
+
+    .title {
+        display: none
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    #show img {
+        height: 100%;
+        width: 100%;
+        min-height: 220px;
+        max-height: 220px;
+        object-fit: cover;
     }
 }
 
@@ -38,7 +53,6 @@
 @media (max-width: 768px) {
     .book-card {
         width: 100% !important;
-        background: red;
     }
 
     .book-card img {
@@ -50,7 +64,6 @@
 @media (max-width: 480px) {
     .book-card {
         width: 100% !important;
-        background: orange;
     }
 
     .book-card img {
@@ -60,7 +73,4 @@
         max-height: 180px !important;
     }
 
-    /*#show-related ul {*/
-    /*    flex-direction: row;*/
-    /*}*/
 }

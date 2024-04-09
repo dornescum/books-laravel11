@@ -1,8 +1,3 @@
-{{--@foreach ($booksGroupedByAuthor as $author => $booksInAuthor)--}}
-{{--    <h2><a href="{{ route('books.author', ['author' => $author]) }}">{{ $author }}</a></h2>--}}
-{{--@endforeach--}}
-{{--<p>test</p>--}}
-
 
 @php
     $authors = App\Models\Book::select('author')->distinct()->get();
@@ -10,8 +5,9 @@
 
 @foreach($authors as $author)
     <li data-id="$book->{{ $author->author }}">
-    <a href="{{ route('books.author', ['author' => $author->author]) }}">{{ $author->author }}</a>
+    <a class="" href="{{ route('books.author', ['author' => $author->author]) }}">{{ $author->author }}</a>
     </li>
 
 @endforeach
-<button> more ...</button>
+{{--TODO page for all authors--}}
+<button class="btn btn-secondary"> more ...</button>
